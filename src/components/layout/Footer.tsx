@@ -2,6 +2,8 @@ import { Button } from '@/components/ui/Button';
 import { Linkedin, Twitter, Instagram } from 'lucide-react';
 
 export function Footer() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <footer className="bg-[#050505] pt-24 pb-8 relative overflow-hidden">
       {/* Top Border Glow */}
@@ -12,7 +14,7 @@ export function Footer() {
           
           <div className="lg:col-span-1">
             <img 
-              src="/logo.png" 
+              src={`${baseUrl}logo.png`} 
               alt="NOVIRE" 
               className="h-14 mb-6 opacity-90"
             />

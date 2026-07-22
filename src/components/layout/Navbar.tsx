@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
+  const baseUrl = import.meta.env.BASE_URL;
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -36,9 +37,9 @@ export function Navbar() {
         className={`fixed top-4 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-500`}
       >
         <div className={`glass-nav px-6 py-3 rounded-full flex items-center justify-between gap-8 transition-all duration-500 ${scrolled ? 'w-full max-w-5xl' : 'w-full max-w-7xl'}`}>
-          <a href="/" className="flex items-center gap-3 z-50">
+          <a href={baseUrl} className="flex items-center gap-3 z-50">
             <img 
-              src="/logo.png" 
+              src={`${baseUrl}logo.png`} 
               alt="NOVIRE" 
               className="h-12 md:h-12"
             />
@@ -86,9 +87,9 @@ export function Navbar() {
               <a href="#faq" className="text-white hover:text-gold transition-colors" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
             </div>
             <div className="mt-auto pb-8">
-              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black border-none hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] px-10 py-5 text-lg" withArrow>
-              Book Your Consultation
-            </Button>
+              <Button size="lg" className="w-full bg-gold hover:bg-gold-light text-black border-none" withArrow>
+                Book Your Consultation
+              </Button>
             </div>
           </motion.div>
         )}
