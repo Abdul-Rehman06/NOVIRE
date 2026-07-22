@@ -1,4 +1,6 @@
 export function PersonalMessage() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -8,7 +10,7 @@ export function PersonalMessage() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-gold to-gold-dark p-1">
               <div className="w-full h-full bg-[#0a0a0a] rounded-full overflow-hidden p-1">
                 <img 
-                  src="https://assets.cdn.filesafe.space/Tv5qFafGTCSVYoxMXmev/media/698222c96860b8ec9c2755c8.jpeg" 
+                  src={`${baseUrl}Angel-Sitting.jpeg`} 
                   alt="Angel - NOVIRE Expert" 
                   className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
                 />

@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/Button';
-import { CheckCircle2, TrendingUp, Calendar, ShieldCheck, CreditCard } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Hero() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
       {/* Background Glows */}
@@ -48,7 +49,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
           >
-             <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-gold-light via-gold to-gold-dark text-black border-none hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] px-10 py-5 text-lg" withArrow>
+            <Button size="lg" className="w-full sm:w-auto bg-gold hover:bg-gold-light text-black border-none hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] px-10 py-5 text-lg" withArrow>
               Book Your Consultation
             </Button>
             <Button variant="outline" size="lg" className="w-full sm:w-auto glass-card border-white/20 hover:bg-white/10 px-10 py-5 text-lg">
@@ -57,20 +58,18 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Floating Composition */}
-        <div className="relative h-[600px] w-full hidden lg:block perspective-1000">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="absolute inset-0"
+        <div className="hidden lg:flex w-full justify-center lg:justify-end">
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.35 }}
+            className="w-full max-w-md"
           >
-            {/* Main Portrait */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-[500px] glass-card p-2 z-20 shadow-2xl rotate-2 animate-float">
-              <img 
-                src="public/Angel-Sitting.jpeg" 
+            <div className="glass-card p-2 shadow-2xl">
+              <img
+                src={`${baseUrl}Angel-Main.webp`}
                 alt="NOVIRE Expert"
-                className="w-full h-full object-cover rounded-xl filter contrast-125"
+                className="w-full h-[560px] object-cover rounded-xl filter contrast-125"
               />
             </div>
           </motion.div>

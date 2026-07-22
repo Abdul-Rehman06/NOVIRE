@@ -1,4 +1,6 @@
 export function About() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section id="about" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
@@ -10,9 +12,9 @@ export function About() {
 
             <div className="aspect-[4/5] rounded-3xl overflow-hidden glass-card p-2 relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
               <img 
-                src="public/Angel-Main.webp" 
+                src={`${baseUrl}Angel-Sitting.jpeg`} 
                 alt="NOVIRE Expert"
-                className="w-full h-full object-cover rounded-2xl  hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
             
